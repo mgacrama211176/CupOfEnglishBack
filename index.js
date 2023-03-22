@@ -12,10 +12,7 @@ dotenv.config();
 const PORT = process.env.PORT || 4000;
 const connectDB = () => {
   mongoose
-    .connect(
-      "PASTE MONGODB LINK HERE",
-      { useNewUrlParser: true }
-    )
+    .connect(process.env.DB_CONNECTION, { useNewUrlParser: true })
     .then(() => {
       console.log("Database Connected");
     })
